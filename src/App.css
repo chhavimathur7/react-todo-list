@@ -1,38 +1,182 @@
-.App {
-  text-align: center;
+/* General */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.app.dark {
+  background: #121212;
   color: white;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app.dark .container {
+  background: #1f1f1f;
+}
+
+/* Input Section */
+.input-group {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.input-group input {
+  padding: 10px;
+  flex: 1;
+  border: 2px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+.input-group button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.input-group button:hover {
+  background: #0056b3;
+}
+
+/* Todo List */
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f1f1;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+}
+
+.todo-list li.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.todo-list span {
+  flex: 1;
+  text-align: left;
+}
+
+.delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.clear-btn,
+.mode-btn {
+  margin: 5px;
+  padding: 8px 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.clear-btn {
+  background: orange;
+}
+.clear-btn:hover {
+  background: darkorange;
+}
+
+.mode-btn {
+  background: purple;
+}
+.mode-btn:hover {
+  background: indigo;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 600px) {
+  .container {
+    margin: 15px;
+    width: auto;
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-group input {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .input-group button {
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .todo-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .todo-list span {
+    margin-bottom: 8px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .clear-btn,
+  .mode-btn {
+    width: 100%;
   }
 }
+
